@@ -50,7 +50,7 @@
             <h4 class="text-muted">Javobgar ma'lummotlar 3</h4>
 
             <div>
-                <button class="table-top-icon">
+                <button class="table-top-icon" id="editModalBtn">
             <i class="far fa-edit text-muted"></i>
           </button>
                 <button class="table-top-icon">
@@ -123,7 +123,7 @@
     <!-- Modal -->
     <div class="modal fade" id="one" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
-            <form class="w-100">
+            <form class="w-100" action="oldUrl" id="firstModalForm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -239,6 +239,15 @@
 
     <script>
         $(document).ready(function() {
+            console.log($("#firstModalForm").attr("action"));
+
+            $("#editModalBtn").click(function(e) {
+                e.preventDefault();
+
+                $("#firstModalForm").attr("action", "newUrl");
+                console.log($("#firstModalForm").attr("action"));
+            });
+
             setTimeout(() => {
                 // alert("jijij");
             }, 2000);
