@@ -18,7 +18,126 @@
     <link rel="stylesheet" href="scss/style.css" />
 </head>
 
-<div class="container">this is container</div>
+<div class="container my-5">
+    <div class="d-flex justify-content-around">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#one">
+        Launch demo modal one
+      </button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#two">
+        Launch demo modal two
+      </button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#three">
+        Launch demo modal three
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="one" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <form class="w-100">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                    </div>
+                    <div class="modal-body px-5">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="maqomi">Javobgar maqomi</label>
+                                    <input type="text" class="form-control" id="maqomi" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="stiri">STIRi</label>
+                                    <input type="text" class="form-control" id="stiri" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="passportNumber">Passport Raqami</label>
+                                    <input type="text" class="form-control" id="passportNumber" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="familiya">Familiyasi</label>
+                                    <input type="text" class="form-control" id="familiya" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="ismi">Ismi</label>
+                                    <input type="text" class="form-control" id="ismi" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="otasiningIsmi">Otasining ismi</label>
+                                    <input type="text" class="form-control" id="otasiningIsmi" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="manzil">Yashash manzili, Hudud</label>
+                                    <input type="text" class="form-control" id="manzil" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="rayon">Rayon</label>
+                                    <input type="text" class="form-control" id="rayon" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="qishloq">Qishloq, ovul, MFY</label>
+                                    <input type="text" class="form-control" id="qishloq" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="manziltwo"> Manzili </label>
+                                    <input type="text" class="form-control" id="manziltwo" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="phone"> Telefon raqam </label>
+                                    <input type="text" class="form-control" id="phone" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="email"> E-Mail </label>
+                                    <input type="email" class="form-control" id="email" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Close
+              </button>
+                        <button type="submit" class="btn btn-primary">
+                Save changes
+              </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <body>
     <!-- jQuery library -->
@@ -33,7 +152,16 @@
     <!-- Index JS -->
 
     <script>
-        $(document).ready(function() {});
+        $(document).ready(function() {
+            setTimeout(() => {
+                // alert("jijij");
+            }, 2000);
+
+            $("#close").click(function(e) {
+                e.preventDefault();
+                $("#one").modal("hide");
+            });
+        });
     </script>
 </body>
 
