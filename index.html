@@ -44,6 +44,80 @@
         Launch demo modal three
       </button>
     </div>
+    <div class="my-5">
+        <div class="row my-2 justify-content-between align-items-center">
+            <h4 class="text-muted">Javobgar ma'lummotlar 3</h4>
+
+            <div>
+                <button class="table-top-icon" id="editModalBtn">
+            <i class="far fa-edit text-muted"></i>
+          </button>
+                <button class="table-top-icon">
+            <i class="far fa-trash-alt text-muted"></i>
+          </button>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-muted">Name</th>
+                    <th scope="col" class="text-muted">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Javobgar Maqomi</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>STIRi</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Passport raqami</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Familiyasi</td>
+                    <td id="getSecondName">palonchiyev pismadon kuchanchi o'gli</td>
+                </tr>
+                <tr>
+                    <td>Ismi</td>
+                    <td id="getName">palonchiyev pismadon kuchanchi o'gli</td>
+                </tr>
+                <tr>
+                    <td>Otasining ismi</td>
+                    <td id="getOtherName">palonchiyev pismadon kuchanchi o'gli</td>
+                </tr>
+                <tr>
+                    <td>Yashas manzili, Hudud</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Rayon</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Qishloq, ovul, MFY</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Manzil</td>
+                    <td>***</td>
+                </tr>
+                <tr>
+                    <td>Telefon raqam</td>
+                    <td>***</td>
+                </tr>
+
+                <tr>
+                    <td>E-Mail</td>
+                    <td>***</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div class="my-5">
         <div class="row my-2 justify-content-between align-items-center">
@@ -81,15 +155,15 @@
                 </tr>
                 <tr>
                     <td>Familiyasi</td>
-                    <td>***</td>
+                    <td id="getSecondName">Abduganiev Afrosiyob Abdurasul o'gli</td>
                 </tr>
                 <tr>
                     <td>Ismi</td>
-                    <td>***</td>
+                    <td id="getName">Abduganiev Afrosiyob Abdurasul o'gli</td>
                 </tr>
                 <tr>
                     <td>Otasining ismi</td>
-                    <td>***</td>
+                    <td id="getOtherName">Abduganiev Afrosiyob Abdurasul o'gli</td>
                 </tr>
                 <tr>
                     <td>Yashas manzili, Hudud</td>
@@ -239,6 +313,20 @@
 
     <script>
         $(document).ready(function() {
+            const fullName = (fullName, number) => {
+                let text = fullName.split(" ");
+                console.log(text);
+                if (number == 2) {
+                    return text[number] + " " + text[number + 1];
+                } else {
+                    return text[number];
+                }
+            };
+
+            $("#getName").text(fullName($("#getName").text(), 0));
+            $("#getSecondName").text(fullName($("#getSecondName").text(), 1));
+            $("#getOtherName").text(fullName($("#getOtherName").text(), 2));
+
             console.log($("#firstModalForm").attr("action"));
 
             $("#editModalBtn").click(function(e) {
