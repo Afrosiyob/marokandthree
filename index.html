@@ -30,6 +30,8 @@
 </head>
 
 <div class="container my-5">
+    <input type="text" id="inputId" />
+
     <div class="d-flex justify-content-around">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#one">
@@ -313,6 +315,15 @@
 
     <script>
         $(document).ready(function() {
+            $("#inputId").on("input", function() {
+                let str = $(this).val();
+                if (str.length > 9) {
+                    console.log("oshib ketti");
+                } else {
+                    console.log($(this).val());
+                }
+            });
+
             const fullName = (fullName, number) => {
                 let text = fullName.split(" ");
                 console.log(text);
